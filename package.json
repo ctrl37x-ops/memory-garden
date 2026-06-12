@@ -1,0 +1,29 @@
+{
+  "name": "my-vibe-app",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "바이브코딩 스타터 템플릿 - Next.js 15 + Supabase + TailwindCSS v4",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.5.0",
+    "@supabase/supabase-js": "^2.45.0",
+    "clsx": "^2.1.0",
+    "lucide-react": "^0.400.0",
+    "next": "^15.0.0",
+    "radix-ui": "^1.4.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^2.5.0",
+    "zustand": "^5.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^4.0.0"
+  }
+}

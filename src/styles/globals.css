@@ -1,0 +1,318 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+@import "tailwindcss";
+
+/* ============================================
+   CSS 변수 정의
+   ============================================ */
+:root {
+  /* 메인 페이지 컬러 */
+  --main-bg: #ffffff;
+  --main-text: #1a1a1a;
+  --main-text-sub: #6b7280;
+  --main-primary: #2563eb;
+  --main-primary-hover: #1d4ed8;
+  --main-border: #e5e7eb;
+  --main-section-bg: #f9fafb;
+
+  /* 관리자 영역 컬러 */
+  --admin-sidebar-bg: #111827;
+  --admin-sidebar-text: #d1d5db;
+  --admin-content-bg: #f3f4f6;
+  --admin-card-bg: #ffffff;
+  --admin-text: #111827;
+  --admin-primary: #3b82f6;
+  --admin-success: #10b981;
+  --admin-warning: #f59e0b;
+  --admin-danger: #ef4444;
+
+  /* 공통 */
+  --radius: 0.75rem;
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo",
+    "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", sans-serif;
+
+  /*
+   * ========================================
+   * [교육용] 다크 테마 전환 시 아래 값으로 교체
+   * ========================================
+   * --main-bg: #0a0a0f;
+   * --main-text: #f0f0f5;
+   * --main-text-sub: #a0a0b8;
+   * --main-primary: #8b5cf6;
+   * --main-primary-hover: #7c3aed;
+   * --main-border: rgba(139, 92, 246, 0.2);
+   * --main-section-bg: rgba(255, 255, 255, 0.03);
+   *
+   * --admin-sidebar-bg: #0f0a1a;
+   * --admin-sidebar-text: #c4b5fd;
+   * --admin-content-bg: #0d0d14;
+   * --admin-card-bg: rgba(255, 255, 255, 0.05);
+   * --admin-text: #f0f0f5;
+   * --admin-primary: #8b5cf6;
+   * --admin-success: #34d399;
+   * --admin-warning: #fbbf24;
+   * --admin-danger: #f87171;
+   */
+}
+
+/* ============================================
+   TailwindCSS v4 커스텀 테마
+   ============================================ */
+@theme {
+  --color-main-bg: var(--main-bg);
+  --color-main-text: var(--main-text);
+  --color-main-text-sub: var(--main-text-sub);
+  --color-main-primary: var(--main-primary);
+  --color-main-primary-hover: var(--main-primary-hover);
+  --color-main-border: var(--main-border);
+  --color-main-section-bg: var(--main-section-bg);
+
+  --color-admin-sidebar-bg: var(--admin-sidebar-bg);
+  --color-admin-sidebar-text: var(--admin-sidebar-text);
+  --color-admin-content-bg: var(--admin-content-bg);
+  --color-admin-card-bg: var(--admin-card-bg);
+  --color-admin-text: var(--admin-text);
+  --color-admin-primary: var(--admin-primary);
+  --color-admin-success: var(--admin-success);
+  --color-admin-warning: var(--admin-warning);
+  --color-admin-danger: var(--admin-danger);
+
+  --font-family-sans: var(--font-sans);
+}
+
+/* ============================================
+   키프레임 애니메이션
+   ============================================ */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(3deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 축하 오버레이 */
+@keyframes celebration-in {
+  0%   { opacity: 0; transform: scale(0.6) translateY(40px); }
+  70%  { transform: scale(1.08) translateY(-6px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes celebration-out {
+  0%   { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.85) translateY(-20px); }
+}
+
+@keyframes confetti-fall {
+  0%   { transform: translateY(-10vh) rotate(0deg) scale(1); opacity: 1; }
+  80%  { opacity: 1; }
+  100% { transform: translateY(105vh) rotate(720deg) scale(0.6); opacity: 0; }
+}
+
+@keyframes plant-bounce {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  20%  { transform: scale(1.3) rotate(-8deg); }
+  40%  { transform: scale(1.2) rotate(6deg); }
+  60%  { transform: scale(1.25) rotate(-4deg); }
+  80%  { transform: scale(1.1) rotate(2deg); }
+}
+
+@keyframes overlay-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* ============================================
+   기본 글로벌 스타일
+   (* 리셋은 TailwindCSS v4 preflight가 처리)
+   ============================================ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--main-text);
+    background-color: var(--main-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* ============================================
+   base 레이어 — 포커스, 스크롤바 등 기본 스타일
+   (레이어 안에 넣어야 Tailwind 유틸리티가 우선됨)
+   ============================================ */
+@layer base {
+  *:focus-visible {
+    outline: 2px solid var(--main-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  .admin-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .admin-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .admin-scrollbar::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 3px;
+  }
+
+  .admin-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+  }
+}
+
+/* ============================================
+   컴포넌트 레이어 — 커스텀 컴포넌트 클래스
+   (Tailwind 유틸리티보다 낮은 우선순위)
+   ============================================ */
+@layer components {
+  /* 메인 영역 섹션 기본 스타일 */
+  .main-section {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem;
+  }
+
+  /* 관리자 카드 기본 스타일 */
+  .admin-card {
+    background: var(--admin-card-bg);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  /* 글래스모피즘 카드 */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+  }
+
+  /* 그라데이션 텍스트 */
+  .gradient-text {
+    background: linear-gradient(135deg, #8b5cf6, #ec4899, #06b6d4);
+    background-size: 200% 200%;
+    animation: gradient-shift 4s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* 글로우 버튼 */
+  .glow-button {
+    position: relative;
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .glow-button::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, #8b5cf6, #ec4899, #06b6d4, #8b5cf6);
+    background-size: 300% 300%;
+    animation: gradient-shift 3s ease infinite;
+    border-radius: 14px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .glow-button:hover::before {
+    opacity: 1;
+  }
+
+  .glow-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(139, 92, 246, 0.4);
+  }
+
+  /* 페이드업 애니메이션 */
+  .animate-fade-up {
+    animation: fade-up 0.8s ease forwards;
+    opacity: 0;
+  }
+
+  .animate-delay-1 { animation-delay: 0.15s; }
+  .animate-delay-2 { animation-delay: 0.3s; }
+  .animate-delay-3 { animation-delay: 0.45s; }
+  .animate-delay-4 { animation-delay: 0.6s; }
+
+  /* 떠다니는 오브 */
+  .floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: float 6s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  /* 시머 효과 */
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.05),
+      transparent
+    );
+    animation: shimmer 3s ease-in-out infinite;
+  }
+}
+
+/* 모션 감소 선호 사용자 대응 — @media 쿼리이므로 레이어 밖 허용 */
+@media (prefers-reduced-motion: reduce) {
+  @layer base {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
