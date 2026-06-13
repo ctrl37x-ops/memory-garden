@@ -31,6 +31,15 @@ const GAMES = [
     border: 'border-orange-200',
     badge: '사람 기억',
   },
+  {
+    href: '/game/mywords',
+    emoji: '📚',
+    title: '나만의 단어장',
+    desc: '자주 잊는 단어를 저장하고 퀴즈로 외워요',
+    color: 'from-teal-50 to-teal-100',
+    border: 'border-teal-200',
+    badge: '어휘력',
+  },
 ];
 
 export default function GameDashboard() {
