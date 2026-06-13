@@ -40,6 +40,15 @@ const GAMES = [
     border: 'border-teal-200',
     badge: '어휘력',
   },
+  {
+    href: '/game/simon',
+    emoji: '🎮',
+    title: '사이먼 게임',
+    desc: '색상 순서를 기억하고 따라 눌러보세요',
+    color: 'from-purple-50 to-purple-100',
+    border: 'border-purple-200',
+    badge: '순서 기억',
+  },
 ];
 
 export default function GameDashboard() {
