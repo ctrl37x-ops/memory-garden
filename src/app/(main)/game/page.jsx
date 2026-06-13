@@ -32,15 +32,6 @@ const GAMES = [
     badge: '사람 기억',
   },
   {
-    href: '/game/mywords',
-    emoji: '📚',
-    title: '나만의 단어장',
-    desc: '자주 잊는 단어를 저장하고 퀴즈로 외워요',
-    color: 'from-teal-50 to-teal-100',
-    border: 'border-teal-200',
-    badge: '어휘력',
-  },
-  {
     href: '/game/simon',
     emoji: '🎮',
     title: '사이먼 게임',
@@ -48,6 +39,15 @@ const GAMES = [
     color: 'from-purple-50 to-purple-100',
     border: 'border-purple-200',
     badge: '순서 기억',
+  },
+  {
+    href: '/game/mywords',
+    emoji: '📚',
+    title: '나만의 단어장',
+    desc: '자주 잊는 단어를 저장하고 퀴즈로 외워요',
+    color: 'from-teal-50 to-teal-100',
+    border: 'border-teal-200',
+    badge: '어휘력',
   },
 ];
 
