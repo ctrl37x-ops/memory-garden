@@ -43,6 +43,15 @@ const GAMES = [
     badge: '순서 기억',
   },
   {
+    href: '/game/tiles',
+    emoji: '🟦',
+    title: '타일 기억',
+    desc: '빛난 타일 위치를 기억하고 눌러보세요',
+    color: 'from-indigo-50 to-indigo-100',
+    border: 'border-indigo-200',
+    badge: '공간 기억',
+  },
+  {
     href: '/game/mywords',
     emoji: '📚',
     title: '나만의 단어장',

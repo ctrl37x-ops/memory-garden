@@ -11,6 +11,7 @@ const GAMES = [
   { emoji: '🧑', title: '얼굴-이름 매칭', desc: '얼굴과 이름을 기억하고 맞춰보세요', badge: '사람 기억' },
   { emoji: '📚', title: '나만의 단어장', desc: '자주 잊는 단어를 저장하고 퀴즈로 외워요', badge: '어휘력' },
   { emoji: '🎮', title: '사이먼 게임', desc: '색상 순서를 기억하고 따라 눌러보세요', badge: '순서 기억' },
+  { emoji: '🟦', title: '타일 기억', desc: '빛난 타일 위치를 기억하고 눌러보세요', badge: '공간 기억' },
 ];
 
 const HOW_TO = [
