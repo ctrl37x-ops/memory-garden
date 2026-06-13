@@ -49,10 +49,13 @@ const useGameStore = create(
         const oldStage = stageOf(totalPoints);
         const newStage = stageOf(totalPoints + points);
 
-        // 연속 플레이 계산
+        // 연속 플레이 계산 (오늘 이미 플레이했으면 유지, 어제면 +1, 그 외 리셋)
         const yesterday = new Date();
         yesterday.setDate(yesterday.getDate() - 1);
-        const newStreak = lastPlayDate === yesterday.toDateString() ? streak + 1 : 1;
+        const newStreak =
+          lastPlayDate === today ? streak
+          : lastPlayDate === yesterday.toDateString() ? streak + 1
+          : 1;
 
         set((state) => ({
           totalPoints: state.totalPoints + points,

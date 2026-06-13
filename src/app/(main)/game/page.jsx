@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import PlantProgress from '@/components/main/PlantProgress';
+import StreakBanner from '@/components/main/StreakBanner';
 
 export const metadata = { title: '오늘의 훈련 — 기억의 정원' };
 
@@ -62,6 +63,9 @@ export default function GameDashboard() {
 
       {/* 식물 진행도 */}
       <PlantProgress />
+
+      {/* 연속 출석 스트릭 */}
+      <StreakBanner />
 
       {/* 훈련 기록 링크 */}
       <Link
