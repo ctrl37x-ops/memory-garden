@@ -23,6 +23,8 @@ const useGameStore = create(
       gameHistory: [], // { game, score, points, date }
       streak: 0,
       celebratingStage: null, // 단계 상승 시 { stage, name, emoji } 세팅
+      dailyGoal: 50, // 하루 목표 포인트
+      goalAchievedDate: null, // 목표 달성한 날짜 (중복 알림 방지)
 
       // 오늘 날짜 확인 후 포인트 리셋
       checkDailyReset: () => {
@@ -72,6 +74,14 @@ const useGameStore = create(
       },
 
       clearCelebration: () => set({ celebratingStage: null }),
+
+      setDailyGoal: (goal) => set({ dailyGoal: goal }),
+
+      // 오늘 목표 달성 여부
+      isGoalAchievedToday: () => {
+        const { todayPoints, dailyGoal, goalAchievedDate } = get();
+        return todayPoints >= dailyGoal;
+      },
 
       // 현재 식물 단계 조회
       getPlantStage: () => {
